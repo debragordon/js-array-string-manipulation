@@ -31,3 +31,17 @@ button {
   border-radius: .5em;
   margin: 0 auto;
 }
+
+.container {
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+}
+
+.answer {
+  padding: 10px;
+  margin: 10px 0;
+  background: white;
+  color: black;
+  border-radius: .5em;
+}

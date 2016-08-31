@@ -14,12 +14,23 @@ document.getElementById("convert").addEventListener("click", function (event) {
   //convert string to an array
   originalArray = userString.split('');
   console.log("This is my string made into an array: ", originalArray);
+
   //call function to reverse array
   var reverseString = reversal(userString);
+  console.log("This is my string reversed: ", reverseString);
+    //DIV id=reverseHere ... write this to the DOM
+  document.getElementById("reverseHere").innerHTML = "<p>Here is your entry in reverse: " + reverseString +"</p>";
   //call alphabits function
-  alphabits();
+  var alphabetString = originalArray.sort().join('');
+  console.log("This is my string alphabetized: ", alphabetString);
+    //DIV id=abcHere ... write this to the DOM
+  document.getElementById("abcHere").innerHTML = "<p>Here is your entry in alphabetical order: " + alphabetString +"</p>";
+
   //call palindrom function
   palindrome(userString, reverseString);
+    //DIV id=palindromeHere ... write this to the DOM
+  console.log("Program complete");
+
 });
 
 //event listener enter
@@ -32,13 +43,12 @@ function reversal(userString) {
   return reverseArray.join('');
 
   //print string to DOM
-  console.log("This is my reverse String: ", reverseString);
 }
 
 function alphabits() {
   //sort array alphabetically
-
   //convert array to string
+
   //write string to DOM
 }
 
@@ -47,23 +57,24 @@ function palindrome(userString, reverseString) {
   //if palidrome write "this is a ..." to the DOM
   //else write "this ..." to the DOM
   if (userString === reverseString) {
-    console.log("You have a palindrome!"); //make this go to DOM
+    document.getElementById("palindromeHere").innerHTML = "You have a PALINDROME!!";
+    console.log("You have a palindrome!");
   } else {
-      console.log("You do not have a palindrome!"); //make this go to DOM
-
-  }
+      document.getElementById("palindromeHere").innerHTML = "You do NOT have a palindrome";
+      console.log("You do not have a palindrome!");
+    }
 }
 
 
 // The text input should only accept letters. No numbers.
 function validate(userStringRepresentation) {
-    console.log(userStringRepresentation);
     //check to see if userStringRepresentation is only letters
     if (userStringRepresentation.indexOf(0) >= 0 || userStringRepresentation.indexOf(1) >= 0 || userStringRepresentation.indexOf(2) >= 0 || userStringRepresentation.indexOf(3) >= 0 || userStringRepresentation.indexOf(4) >= 0 || userStringRepresentation.indexOf(5) >= 0 || userStringRepresentation.indexOf(6) >= 0 || userStringRepresentation.indexOf(7) >= 0 || userStringRepresentation.indexOf(8) >= 0 || userStringRepresentation.indexOf(9) >= 0) {
       alert("Please enter only phrases containing letters. Try again.");
       invalidEntryFlag = false;
     } else {
         invalidEntryFlag = true;
-    }
-
+      }
 }
+
+
