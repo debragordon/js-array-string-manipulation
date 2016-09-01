@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: tomato;
+  font-family: Arial;
+  color: white;
+  text-align: center;
+}
+
+h2, div {
+  padding: 1em;
+}
+
+input {
+  padding: 10px;
+  border-radius: .5em;
+  display: block;
+  margin: 0 auto;
+}
+
+button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  border-radius: .5em;
+  margin: 0 auto;
+}
+
+article {
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+}
+
+.answer {
+  padding: 10px;
+  margin: 10px 0;
+  background: white;
+  color: black;
+  border-radius: .5em;
+}
+
+.hidden {
+position: absolute;
+left: -9999px;
+top: -9999px;
+visibility: hidden;
+}
+
+.show {
+  display: block;
+}
