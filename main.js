@@ -2,8 +2,11 @@
 var originalArray = [];
 var reverseArray = [];
 var invalidEntryFlag;
+var answerDiv = document.getElementById("convert");
+var showDiv = document.getElementById("show");
+
 //event listener click
-document.getElementById("convert").addEventListener("click", function (event) {
+answerDiv.addEventListener("click", function (event) {
   //grab the user input
   var userString = document.getElementById("user-input").value
   //validate letters only
@@ -28,12 +31,18 @@ document.getElementById("convert").addEventListener("click", function (event) {
 
   //call palindrom function
   palindrome(userString, reverseString);
+
+  //show answer
+  toggle_visibility("show");
+
     //DIV id=palindromeHere ... write this to the DOM
   console.log("Program complete");
 
 });
 
 //event listener enter
+
+
 
 function reversal(userString) {
   //reverse array
@@ -77,4 +86,6 @@ function validate(userStringRepresentation) {
       }
 }
 
-
+function toggle_visibility(id) {
+  document.getElementById(id).className = "show";
+}
