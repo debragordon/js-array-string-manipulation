@@ -6,9 +6,21 @@ var answerDiv = document.getElementById("convert");
 var showDiv = document.getElementById("show");
 
 //event listener click
-answerDiv.addEventListener("click", function (event) {
+answerDiv.addEventListener("click", convertThis);
+
+window.addEventListener("keypress", enter);
+
+function enter (event) {
+  if (event.keyCode == 13) {
+    convertThis();
+  }
+};
+
+//answerDiv.addEventListener("click", function (event) {
+  function convertThis () {
   //grab the user input
   var userString = document.getElementById("user-input").value
+  if (userString != "") {
   //validate letters only
   validate(userString);
   if (invalidEntryFlag === false) {
@@ -37,12 +49,13 @@ answerDiv.addEventListener("click", function (event) {
 
     //DIV id=palindromeHere ... write this to the DOM
   console.log("Program complete");
+}
 
-});
+else {
+  alert("Please enter a valid word/phrase.");
+}
 
-//event listener enter
-
-
+};
 
 function reversal(userString) {
   //reverse array
